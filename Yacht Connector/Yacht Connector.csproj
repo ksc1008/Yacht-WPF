@@ -1,0 +1,99 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
+    <RootNamespace>Yacht_Connector</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="pngwing.com.png" />
+    <None Remove="Resources\d1.png" />
+    <None Remove="Resources\d2.png" />
+    <None Remove="Resources\d3.png" />
+    <None Remove="Resources\d4.png" />
+    <None Remove="Resources\d5.png" />
+    <None Remove="Resources\d6.png" />
+    <None Remove="Roboto-Regular.ttf" />
+    <None Remove="스크린샷%283%29.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Resources\die1.xaml" />
+    <Page Remove="Resources\die2.xaml" />
+    <Page Remove="Resources\die3.xaml" />
+    <Page Remove="Resources\die4.xaml" />
+    <Page Remove="Resources\die5.xaml" />
+    <Page Remove="Resources\die6.xaml" />
+    <Page Remove="Resources\d_choice.xaml" />
+    <Page Remove="Resources\d_fok.xaml" />
+    <Page Remove="Resources\d_fullhouse.xaml" />
+    <Page Remove="Resources\d_lstr.xaml" />
+    <Page Remove="Resources\d_sstr.xaml" />
+    <Page Remove="Resources\d_yacht.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Font\Roboto-Regular.ttf" />
+    <Resource Include="Resources\d1.png" />
+    <Resource Include="Resources\d2.png" />
+    <Resource Include="Resources\d3.png" />
+    <Resource Include="Resources\d4.png" />
+    <Resource Include="Resources\d5.png" />
+    <Resource Include="Resources\d6.png" />
+    <Resource Include="Resources\die1.xaml" />
+    <Resource Include="Resources\d_yacht.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\d_lstr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\d_sstr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\d_fullhouse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\d_fok.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\d_choice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\die2.xaml" />
+    <Resource Include="Resources\die3.xaml" />
+    <Resource Include="Resources\die4.xaml" />
+    <Resource Include="Resources\die5.xaml" />
+    <Resource Include="Resources\die6.xaml" />
+    <Resource Include="Resources\People.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Person.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.9" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\pngwing.com.png" />
+    <Resource Include="스크린샷(3).png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+
+</Project>

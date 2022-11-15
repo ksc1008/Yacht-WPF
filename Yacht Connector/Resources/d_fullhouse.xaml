@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+  <Canvas Name="svg167" Width="200" Height="200">
+        <Canvas.RenderTransform>
+            <TranslateTransform X="0" Y="0"/>
+        </Canvas.RenderTransform>
+        <Canvas Name="g165">
+      <Canvas.RenderTransform>
+        <TranslateTransform X="0" Y="-922.52"/>
+      </Canvas.RenderTransform>      
+      <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="50" Canvas.Top="962.5" Width="40" Height="40" Name="circle160" Fill="#000000" Stroke="#FF000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+      <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="110" Canvas.Top="962.5" Width="40" Height="40" Name="circle161" Fill="#000000" Stroke="#FF000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+      <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="20" Canvas.Top="1042.5" Width="40" Height="40" Name="circle163" Fill="#000000" Stroke="#FF000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+      <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="80" Canvas.Top="1042.5" Width="40" Height="40" Name="circle164" Fill="#000000" Stroke="#FF000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+      <Rectangle xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="140" Canvas.Top="1042.5" Width="40" Height="40" Name="circle162" Fill="#000000" Stroke="#FF000000" StrokeStartLineCap="Square" StrokeEndLineCap="Square"/>
+    </Canvas>
+  </Canvas>
+</Viewbox>

@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Yacht_Connector"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Yacht_Connector.MainWindow"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{materialDesign:MaterialDesignFont}"
+        Title="Yacht Dice" Height="760" Width="600" 
+        ResizeMode="CanMinimize">
+    <Grid Height="720">
+        <Image x:Name="Dice_Image" HorizontalAlignment="Left" Height="128" Margin="81,55,0,0" VerticalAlignment="Top" Width="124" Source="/resources/pngwing.com.png"/>
+        <Label Content="Yacht Dice" Height="112" Margin="241,55,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontFamily="Haettenschweiler" FontSize="72" FontWeight="Bold"/>
+        <Label Content="제작 : 권성찬" Height="32" Margin="241,149,0,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontFamily="Roboto" FontWeight="Bold" HorizontalContentAlignment="Center" FontSize="18"/>
+        <Button Name="StartButton" Content="Start" HorizontalAlignment="Center" Height="67" Margin="0,449,0,0" VerticalAlignment="Top" Width="270" Cursor="Hand" FontFamily="Roboto" Click="Start_Click" FontSize="22"/>
+        <Button Name="HowToPlayButton" Content="How To Play" HorizontalAlignment="Center" Height="67" Margin="0,564,0,0" VerticalAlignment="Top" Width="270" Cursor="Hand" FontFamily="Roboto" Click="HowToPlay_Click" Background="{DynamicResource SecondaryHueMidBrush}" BorderBrush="{DynamicResource SecondaryHueMidBrush}" Foreground="{DynamicResource SecondaryHueMidForegroundBrush}" FontSize="20"/>
+        <Label Visibility="Hidden" Name="ara" Content="알아서 하샘" Height="32" Margin="120,649,120,0" VerticalAlignment="Top" VerticalContentAlignment="Center" FontFamily="Gulim" FontWeight="Bold" HorizontalContentAlignment="Center" FontSize="24" Foreground="Black"/>
+        <Frame  Name="fr" IsEnabled="False" Visibility="Hidden" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
