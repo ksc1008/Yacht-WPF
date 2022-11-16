@@ -9,7 +9,7 @@
       Background="{DynamicResource MaterialDesignBackground}"
       FontFamily="{materialDesign:MaterialDesignFont}"
       mc:Ignorable="d" 
-      d:DesignHeight="720" d:DesignWidth="1280"
+      d:DesignHeight="720" d:DesignWidth="1000"
       Title="Page2">
 
     <Grid Background="#fffff8e1">
@@ -19,9 +19,9 @@
             <RowDefinition Height="161*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="221*"/>
-            <ColumnDefinition Width="121*"/>
-            <ColumnDefinition Width="298*"/>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="100*"/>
         </Grid.ColumnDefinitions>
 
         <Label Margin="80,0,0,0" Height="40" VerticalAlignment="Bottom" Background="#2B2D2F" Foreground="#DDFFFFFF" Padding="10,0,0,2"
@@ -205,7 +205,7 @@
             </Grid>
         </Grid>
 
-        <Border Grid.Row="1" VerticalAlignment="Top" Grid.Column="2" Margin="80,20,80,57" Height="100" BorderThickness="6" BorderBrush="#1b0000" CornerRadius="5">
+        <Border Grid.Row="1" VerticalAlignment="Top" Grid.Column="2" Margin="80,20,80,57" Height="100" BorderThickness="6" BorderBrush="#1b0000" CornerRadius="0">
             <Grid Background="#4b2c20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -216,7 +216,7 @@
                 </Grid.ColumnDefinitions>
             </Grid>
         </Border>
-        <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Height="150" Margin="80,140,80,200" BorderThickness="6" BorderBrush="#bdbdbd" CornerRadius="10">
+        <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Height="150" Margin="60,140,60,200" BorderThickness="6" BorderBrush="#bdbdbd" CornerRadius="10">
             <Grid Background="#bdbdbd">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -225,46 +225,46 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Border x:Name="dg1" Grid.Column="0" Margin="12" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                <Border x:Name="dg1" Grid.Column="0" Margin="8" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     BorderThickness="3" BorderBrush="#7F00C4FF" CornerRadius="5" Visibility="Hidden">
                     <Border.Effect>
                         <BlurEffect KernelType="Box" Radius="5"/>
                     </Border.Effect>
                     <Rectangle Fill="#7F00C4FF" Margin="-1"/>
                 </Border>
-                <Border x:Name="dg2" Grid.Column="1" Margin="12" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                <Border x:Name="dg2" Grid.Column="1" Margin="8" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     BorderThickness="3" BorderBrush="#7F00C4FF" CornerRadius="5" Visibility="Hidden">
                     <Border.Effect>
                         <BlurEffect KernelType="Box" Radius="5"/>
                     </Border.Effect>
                     <Rectangle Fill="#7F00C4FF" Margin="-1"/>
                 </Border>
-                <Border x:Name="dg3" Grid.Column="2" Margin="12" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                <Border x:Name="dg3" Grid.Column="2" Margin="8" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     BorderThickness="3" BorderBrush="#7F00C4FF" CornerRadius="5" Visibility="Hidden">
                     <Border.Effect>
                         <BlurEffect KernelType="Box" Radius="5"/>
                     </Border.Effect>
                     <Rectangle Fill="#7F00C4FF" Margin="-1"/>
                 </Border>
-                <Border x:Name="dg4" Grid.Column="3" Margin="12" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                <Border x:Name="dg4" Grid.Column="3" Margin="8" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     BorderThickness="3" BorderBrush="#7F00C4FF" CornerRadius="5" Visibility="Hidden">
                     <Border.Effect>
                         <BlurEffect KernelType="Box" Radius="5"/>
                     </Border.Effect>
                     <Rectangle Fill="#7F00C4FF" Margin="-1"/>
                 </Border>
-                <Border x:Name="dg5" Grid.Column="4" Margin="12" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                <Border x:Name="dg5" Grid.Column="4" Margin="8" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     BorderThickness="3" BorderBrush="#7F00C4FF" CornerRadius="5" Visibility="Hidden">
                     <Border.Effect>
                         <BlurEffect KernelType="Box" Radius="5"/>
                     </Border.Effect>
                     <Rectangle Fill="#7F00C4FF" Margin="-1"/>
                 </Border>
-                <Image Name="rd1" Margin="15" Grid.Column="0" Source="/Resources/die6.png"/>
-                <Image Name="rd2" Margin="15" Grid.Column="1" Source="/Resources/die6.png"/>
-                <Image Name="rd3" Margin="15" Grid.Column="2" Source="/Resources/die6.png"/>
-                <Image Name="rd4" Margin="15" Grid.Column="3" Source="/Resources/die6.png"/>
-                <Image Name="rd5" Margin="15" Grid.Column="4" Source="/Resources/die6.png"/>
+                <Image Name="rd1" Margin="10" Grid.Column="0" Source="/Resources/die6.png"/>
+                <Image Name="rd2" Margin="10" Grid.Column="1" Source="/Resources/die6.png"/>
+                <Image Name="rd3" Margin="10" Grid.Column="2" Source="/Resources/die6.png"/>
+                <Image Name="rd4" Margin="10" Grid.Column="3" Source="/Resources/die6.png"/>
+                <Image Name="rd5" Margin="10" Grid.Column="4" Source="/Resources/die6.png"/>
             </Grid>
         </Border>
         

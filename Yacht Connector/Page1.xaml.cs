@@ -63,7 +63,7 @@ namespace Yacht_Connector
             var pa = new DoubleAnimation();
             pa.Duration = dur;
             pa.From = 600;
-            pa.To = 600 + 680;
+            pa.To = 600 + 400;
             pa.EasingFunction = ef;
             Storyboard.SetTarget(pa, MainWindow.Instance);
             Storyboard.SetTargetProperty(pa, new PropertyPath(MainWindow.WidthProperty));
