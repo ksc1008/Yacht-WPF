@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Resources;
 using System.Windows.Shapes;
+using Yacht;
 
 namespace Yacht_Connector
 {
@@ -25,10 +26,15 @@ namespace Yacht_Connector
     {
         Viewbox[] vbs = new Viewbox[6];
         Viewbox[] vbs2 = new Viewbox[6];
+        BitmapImage[] dimg = new BitmapImage[6];
+        DiceSet ds;
         void loadDice()
         {
-            for(int i = 1; i <= 6; i++)
+            for (int i = 1; i <= 6; i++)
+            {
                 vbs[i - 1] = loadViewboxFromXaml("/Resources/die" + i.ToString() + ".xaml");
+                dimg[i - 1] = loadImage("/Resources/die" + i.ToString() + ".png");
+            }
         }
 
         void loadSpecialDice()
@@ -48,9 +54,15 @@ namespace Yacht_Connector
             System.Windows.Markup.XamlReader reader = new System.Windows.Markup.XamlReader();
             return (Viewbox)reader.LoadAsync(info.Stream);
         }
+        BitmapImage loadImage(string filename)
+        {
+            var uri = new BitmapImage(new System.Uri(filename, UriKind.Relative));
+            return uri;
+        }
 
         public Page2()
         {
+            ds = new DiceSet();
             ScaleTransform scaleTrans = new ScaleTransform();
             scaleTrans.ScaleX = 0.15;
             scaleTrans.ScaleY = 0.15;
@@ -82,6 +94,28 @@ namespace Yacht_Connector
             c15.Children.Add(vbs2[4]);
             c16.Children.Add(vbs2[5]);
 
+            rd1.MouseEnter += (s, e) => { dg1.Visibility = Visibility.Visible; };
+            rd2.MouseEnter += (s, e) => { dg2.Visibility = Visibility.Visible; };
+            rd3.MouseEnter += (s, e) => { dg3.Visibility = Visibility.Visible; };
+            rd4.MouseEnter += (s, e) => { dg4.Visibility = Visibility.Visible; };
+            rd5.MouseEnter += (s, e) => { dg5.Visibility = Visibility.Visible; };
+
+            rd1.MouseLeave += (s,e) => { dg1.Visibility = Visibility.Hidden; };
+            rd2.MouseLeave += (s,e) => { dg2.Visibility = Visibility.Hidden; };
+            rd3.MouseLeave += (s,e) => { dg3.Visibility = Visibility.Hidden; };
+            rd4.MouseLeave += (s,e) => { dg4.Visibility = Visibility.Hidden; };
+            rd5.MouseLeave += (s,e) => { dg5.Visibility = Visibility.Hidden; };
+
+        }
+
+        private void RollButton_Click(object sender, RoutedEventArgs e)
+        {
+            ds.Roll(new bool[] { true, true, true, true, true });
+            rd1.Source = dimg[ds.Dices[0]];
+            rd2.Source = dimg[ds.Dices[1]];
+            rd3.Source = dimg[ds.Dices[2]];
+            rd4.Source = dimg[ds.Dices[3]];
+            rd5.Source = dimg[ds.Dices[4]];
         }
     }
 }
