@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="Yacht_Connector.DiceRoller"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:hx="http://helix-toolkit.org/wpf/SharpDX"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Yacht_Connector"
+             mc:Ignorable="d" 
+            
+             d:DesignHeight="400" d:DesignWidth="300">
+    
+    <hx:Viewport3DX        
+        ShowViewCube="True"
+        ShowCoordinateSystem="True"
+        IsPanEnabled="True"
+        IsRotationEnabled="True"      
+        IsMoveEnabled="True"
+        IsZoomEnabled="True"   
+        IsViewCubeMoverEnabled="True"
+        IsShadowMappingEnabled="True"
+        EnableDesignModeRendering="True"
+        x:Name="view1"
+        BackgroundColor="#FFFFF8E1"
+        Camera="{Binding Camera}"
+        EffectsManager="{Binding EffectsManager}"
+        FXAALevel="Ultra" 
+        EnableSwapChainRendering="True"
+        ModelUpDirection="{Binding UpDirection}"
+        TextBrush="Black"
+        UseDefaultGestures="False" ZoomRectangleCursor="SizeNWSE">
+
+        <hx:SpotLight3D
+                x:Name="spotLight"
+                Direction="{Binding Camera1.LookDirection, Mode=OneWay}"
+                OuterAngle="{Binding Camera1.FieldOfView}"
+                Position="{Binding Camera1.Position, Mode=OneWay}"
+                Range="{Binding Camera1.FarPlaneDistance}"
+                Color="{Binding SpotLightColor}" />
+        <hx:AmbientLight3D Color="{Binding AmbientLightColor}"/>
+        <hx:PostEffectMeshBorderHighlight EffectName="highlight" />
+        <hx:DirectionalLight3D Direction="{Binding DirectionalLightDirection}" Color="{Binding DirectionalLightColor}" />
+        <hx:MeshGeometryModel3D
+            x:Name="model1"
+            Geometry="{Binding Model.Geometry}"
+            Material="{Binding Model.Material}"
+            Transform="{Binding Model.Transform}"
+            IsThrowingShadow="True"/>
+        <hx:MeshGeometryModel3D
+            x:Name="model2"
+            Geometry="{Binding Model2.Geometry}"
+            Material="{Binding Model2.Material}"
+            Transform="{Binding Model2.Transform}"
+            IsThrowingShadow="True"/>
+        <hx:MeshGeometryModel3D
+            x:Name="model3"
+            Geometry="{Binding Model3.Geometry}"
+            Material="{Binding Model3.Material}"
+            Transform="{Binding Model3.Transform}"
+            IsThrowingShadow="True"/>
+        <hx:MeshGeometryModel3D
+            x:Name="model4"
+            Geometry="{Binding Model4.Geometry}"
+            Material="{Binding Model4.Material}"
+            Transform="{Binding Model4.Transform}"
+            IsThrowingShadow="True"/>
+        <hx:MeshGeometryModel3D
+            x:Name="model5"
+            Geometry="{Binding Model5.Geometry}"
+            Material="{Binding Model5.Material}"
+            Transform="{Binding Model5.Transform}"
+            IsThrowingShadow="True"/>
+        <hx:MeshGeometryModel3D
+                x:Name="plane"
+                CullMode="Back"
+                Geometry="{Binding Plane}"
+                IsThrowingShadow="false"
+                Material="{Binding GrayMaterial}"
+                Transform="{Binding PlaneTransform}" />
+        <hx:MeshGeometryModel3D
+                x:Name="bar1"
+                CullMode="Back"
+                Geometry="{Binding Bar1}"
+                IsThrowingShadow="false"
+                Material="{Binding BlackMaterial}"
+                Transform="{Binding Bar1Transform}" />
+
+        <hx:ShadowMap3D
+                x:Name="shadowMap"
+                LightCamera="{Binding Camera1}"
+                Resolution="{Binding ShadowMapResolution}" IsSceneDynamic="True"/>
+    </hx:Viewport3DX>
+</UserControl>

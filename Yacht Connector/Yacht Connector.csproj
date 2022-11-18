@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x86</Platforms>
+    <SupportedOSPlatformVersion>10.0.18362.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -82,6 +83,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="HelixToolkit.SharpDX.Core.Wpf" Version="2.22.0" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.9" />
     <PackageReference Include="MaterialDesignThemes" Version="4.6.1" />
   </ItemGroup>
@@ -92,6 +94,13 @@
 
   <ItemGroup>
     <Folder Include="Assets\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="physicsClsssWrapper">
+      <HintPath>..\..\physicsClsssWrapper\Debug\physicsClsssWrapper.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
