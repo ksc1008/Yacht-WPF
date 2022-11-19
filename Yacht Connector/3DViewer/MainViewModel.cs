@@ -68,6 +68,7 @@ namespace Yacht_Connector
         public ProjectionCamera Camera1 { private set; get; }
 
         public bool IsAnimationPlaying { get; private set; } = false;
+        int animatingDiceCount;
 
         public DiceAnimator[] animators = new DiceAnimator[5];
 
@@ -197,8 +198,9 @@ namespace Yacht_Connector
             };
         }
 
-        public void StartAnim() { 
+        public void StartAnim(int num) { 
             compositeHelper.Rendering += Render;
+            animatingDiceCount = num;
             IsAnimationPlaying = true;
         }
 
@@ -213,17 +215,14 @@ namespace Yacht_Connector
             long ts = Stopwatch.GetTimestamp();
             long fq = Stopwatch.Frequency;
             bool end = false;
-            foreach(var anim in animators)
+            for(int i = 0; i < animatingDiceCount; i++)
             {
-                if (!anim.Update(ts, fq))
-                {
+                if (!animators[i].Update(ts, fq))
                     end = true;
-                }
             }
 
             if (end)
                 EndAnim();
-
         }
 
     }

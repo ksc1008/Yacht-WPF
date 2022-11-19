@@ -10,13 +10,13 @@
              d:DesignHeight="400" d:DesignWidth="300">
     
     <hx:Viewport3DX        
-        ShowViewCube="True"
-        ShowCoordinateSystem="True"
+        ShowViewCube="False"
+        ShowCoordinateSystem="False"
         IsPanEnabled="True"
         IsRotationEnabled="True"      
         IsMoveEnabled="True"
         IsZoomEnabled="True"   
-        IsViewCubeMoverEnabled="True"
+        IsViewCubeMoverEnabled="False"
         IsShadowMappingEnabled="True"
         EnableDesignModeRendering="True"
         x:Name="view1"

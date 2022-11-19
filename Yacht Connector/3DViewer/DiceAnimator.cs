@@ -1,5 +1,6 @@
 ﻿using HelixToolkit.SharpDX.Core.Animations;
 using HelixToolkit.Wpf.SharpDX;
+using MaterialDesignThemes.Wpf;
 using SharpDX;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,14 @@ namespace Yacht_Connector._3DViewer
         int frame = 0;
         List<Vector3D> positions = new();
         List<Vector3D> rotAxis = new();
+
+
+        AxisAngleRotation3D initRotation;
+
         List<float> rotAngles = new();
         long startTime;
-        Vector3D up = new Vector3D(0, 1, 0);
         MeshGeometryModel3D model;
         long lastiter = 0;
-        int cnt = 0;
 
         private int _intervalMillisecond;
         public int Interval { get => _intervalMillisecond; set => _intervalMillisecond = value; }
@@ -35,8 +38,10 @@ namespace Yacht_Connector._3DViewer
             model = _model;
         }
 
-        public void SetAnimation(List<float> l, int diceCount, int diceIndex)
+        public void SetAnimation(List<float> l, int diceCount, int diceIndex,int targetDice=6)
         {
+            VectorCalculator.Face initFace;
+
             positions.Clear();
             rotAxis.Clear();
             rotAngles.Clear();
@@ -50,6 +55,20 @@ namespace Yacht_Connector._3DViewer
                 rotAngles.Add(l[offset + 6] * 180 / MathF.PI);
                 offset += sz;
             }
+
+
+            var aar = new AxisAngleRotation3D();
+            aar.Axis = rotAxis[rotAxis.Count - 1];
+            aar.Angle = rotAngles[rotAngles.Count - 1];
+            var mat = new RotateTransform3D(aar).ToMatrix();
+
+            initFace = VectorCalculator.GetUpperFace(new Vector3(mat.M12, mat.M22, mat.M32)
+                );
+
+            Debug.WriteLine(initFace.ToString());
+
+            initRotation = VectorCalculator.ManipulateFace(initFace, VectorCalculator.FacePerDieNum[targetDice]);
+            Debug.WriteLine(initRotation.Axis + ", " + initRotation.Angle);
         }
 
         public void StartAnimation(long timeStamp)
@@ -59,17 +78,18 @@ namespace Yacht_Connector._3DViewer
 
         public bool Update(long timeStamp, long frequency)
         {
-            cnt++;
             int iter = MathUtil.Clamp((int)(((float)(timeStamp - startTime) / frequency) * _intervalMillisecond),0,frame-1);
             if (iter == lastiter)
                 return true;
-            Debug.WriteLine("Updating.."+cnt);
             lastiter = iter;
             var d = GetGeometryData(iter);
 
-            var mat = new RotateTransform3D(new AxisAngleRotation3D(d.Item2, d.Item3)).ToMatrix().ToMatrix3D();
-            Debug.WriteLine(d.Item1.ToString());
+            var mat = new RotateTransform3D(initRotation).ToMatrix().ToMatrix3D();
+            mat.Rotate(new System.Windows.Media.Media3D.Quaternion(d.Item2, d.Item3));
+
+            //var mat = new RotateTransform3D(new AxisAngleRotation3D(d.Item2, d.Item3)).ToMatrix().ToMatrix3D();      
             //mat.Scale(new Vector3D(.5, .5, .5));
+
             mat.Translate(d.Item1);
             model.Transform = new MatrixTransform3D(mat);
 
