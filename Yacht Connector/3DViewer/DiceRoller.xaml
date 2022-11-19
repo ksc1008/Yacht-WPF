@@ -12,19 +12,18 @@
     <hx:Viewport3DX        
         ShowViewCube="False"
         ShowCoordinateSystem="False"
-        IsPanEnabled="True"
-        IsRotationEnabled="True"      
-        IsMoveEnabled="True"
-        IsZoomEnabled="True"   
+        IsPanEnabled="False"
+        IsRotationEnabled="False"      
+        IsMoveEnabled="False"
+        IsZoomEnabled="False"   
         IsViewCubeMoverEnabled="False"
         IsShadowMappingEnabled="True"
-        EnableDesignModeRendering="True"
+        EnableSwapChainRendering="True"
         x:Name="view1"
         BackgroundColor="#FFFFF8E1"
         Camera="{Binding Camera}"
         EffectsManager="{Binding EffectsManager}"
-        FXAALevel="Ultra" 
-        EnableSwapChainRendering="True"
+        FXAALevel="Medium" 
         ModelUpDirection="{Binding UpDirection}"
         TextBrush="Black"
         UseDefaultGestures="False" ZoomRectangleCursor="SizeNWSE">
@@ -83,6 +82,27 @@
                 IsThrowingShadow="false"
                 Material="{Binding BlackMaterial}"
                 Transform="{Binding Bar1Transform}" />
+        <hx:MeshGeometryModel3D
+                x:Name="bar2"
+                CullMode="Back"
+                Geometry="{Binding Bar2}"
+                IsThrowingShadow="false"
+                Material="{Binding BlackMaterial}"
+                Transform="{Binding Bar2Transform}" />
+        <hx:MeshGeometryModel3D
+                x:Name="bar3"
+                CullMode="Back"
+                Geometry="{Binding Bar3}"
+                IsThrowingShadow="false"
+                Material="{Binding BlackMaterial}"
+                Transform="{Binding Bar3Transform}" />
+        <hx:MeshGeometryModel3D
+                x:Name="bar4"
+                CullMode="Back"
+                Geometry="{Binding Bar4}"
+                IsThrowingShadow="false"
+                Material="{Binding BlackMaterial}"
+                Transform="{Binding Bar4Transform}" />
 
         <hx:ShadowMap3D
                 x:Name="shadowMap"

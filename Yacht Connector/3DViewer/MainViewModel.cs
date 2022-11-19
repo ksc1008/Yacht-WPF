@@ -61,10 +61,14 @@ namespace Yacht_Connector
 
         public Media3D.Transform3D PlaneTransform { get; private set; }
         public Media3D.Transform3D Bar1Transform { get; private set; }
+        public Media3D.Transform3D Bar2Transform { get; private set; }
+        public Media3D.Transform3D Bar3Transform { get; private set; }
+        public Media3D.Transform3D Bar4Transform { get; private set; }
         public MeshGeometry3D Plane { get; private set; }
         public MeshGeometry3D Bar1 { get; private set; }
         public MeshGeometry3D Bar2 { get; private set; }
         public MeshGeometry3D Bar3 { get; private set; }
+        public MeshGeometry3D Bar4 { get; private set; }
         public ProjectionCamera Camera1 { private set; get; }
 
         public bool IsAnimationPlaying { get; private set; } = false;
@@ -103,8 +107,8 @@ namespace Yacht_Connector
 
             Camera = new PerspectiveCamera()
             {
-                Position = new Point3D(0, 12, 10),
-                LookDirection = new Vector3D(0, -8, -4),
+                Position = new Point3D(0, 11, 7.5),
+                LookDirection = new Vector3D(0, -8, -1),
                 UpDirection = new Vector3D(0, 1, 0),
                 FarPlaneDistance = 5000,
                 NearPlaneDistance = .1f,
@@ -160,11 +164,13 @@ namespace Yacht_Connector
                 Material = ModelMaterial
             };
 
-            animators[0] = new DiceAnimator(Model,90);
-            animators[1] = new DiceAnimator(Model2, 90);
-            animators[2] = new DiceAnimator(Model3, 90);
-            animators[3] = new DiceAnimator(Model4, 90);
-            animators[4] = new DiceAnimator(Model5, 90);
+            float interval = 75;
+
+            animators[0] = new DiceAnimator(Model, 75);
+            animators[1] = new DiceAnimator(Model2, 75);
+            animators[2] = new DiceAnimator(Model3, 75);
+            animators[3] = new DiceAnimator(Model4, 75);
+            animators[4] = new DiceAnimator(Model5, 75);
 
 
 
@@ -176,16 +182,28 @@ namespace Yacht_Connector
             GrayMaterial.DiffuseColor = new Color4(.3f, 0, 0, 1);
 
             var b3 = new MeshBuilder();
-            b3.AddBox(new Vector3(0, .5f, 0), 15, 1, 1);
+            b3.AddBox(new Vector3(0, 1.5f, 11), 8, 3, .5);
             Bar1 = b3.ToMeshGeometry3D();
             BlackMaterial = PhongMaterials.Black;
-            Bar1Transform = new Media3D.TranslateTransform3D(0, 0, 3);
+
+            var b4 = new MeshBuilder();
+            b3.AddBox(new Vector3(4, 1.5f, 7), .5, 3, 8);
+            Bar2 = b4.ToMeshGeometry3D();
+
+            var b5 = new MeshBuilder();
+            b3.AddBox(new Vector3(-4, 1.5f, 7), .5, 3, 8);
+            Bar3 = b5.ToMeshGeometry3D();
+
+            var b6 = new MeshBuilder();
+            b3.AddBox(new Vector3(0, 1.5f, 3), 8, 3, .5);
+            Bar4 = b6.ToMeshGeometry3D();
 
             GrayMaterial.RenderShadowMap = true;
             WhiteMaterial.RenderShadowMap = true;
             GreenMaterial.RenderShadowMap = true;
             BlueMaterial.RenderShadowMap = true;
             YellowMaterial.RenderShadowMap = true;
+            BlackMaterial.RenderShadowMap = true;
 
             Camera1 = new PerspectiveCamera
             {
