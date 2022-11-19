@@ -99,7 +99,7 @@
 
   <ItemGroup>
     <Reference Include="physicsClsssWrapper">
-      <HintPath>..\..\physicsClsssWrapper\Debug\physicsClsssWrapper.dll</HintPath>
+      <HintPath>lib\physicsClsssWrapper.dll</HintPath>
     </Reference>
   </ItemGroup>
 
