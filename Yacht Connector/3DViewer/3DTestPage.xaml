@@ -14,10 +14,7 @@
 
     <Grid>
         <local:DiceRoller Margin="5,10,5,89" x:Name="roller" />
-        <Button Content="1" Click="Button_Click" Cursor="Hand" Margin="342,648,95,10" Height="46" Width="63"/>
-        <Label Name="ll" Width="300" Height="80" Margin="5,165,495,189"/>
-        <Button Content="2" Height="46" Width="63" Click="Button_Click_1"  Cursor="Hand" Margin="74,648,363,10"/>
-
+        <Button Name="b" Margin="0,636,0,23" Click="b_Click" Height="80"/>
     </Grid>
 
 </Window>

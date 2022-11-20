@@ -8,17 +8,18 @@
              mc:Ignorable="d" 
             
              d:DesignHeight="400" d:DesignWidth="300">
-    
+    <Grid>
     <hx:Viewport3DX        
         ShowViewCube="False"
         ShowCoordinateSystem="False"
         IsPanEnabled="False"
         IsRotationEnabled="False"      
         IsMoveEnabled="False"
+        ShowFrameRate="False"
         IsZoomEnabled="False"   
         IsViewCubeMoverEnabled="False"
         IsShadowMappingEnabled="True"
-        EnableSwapChainRendering="True"
+        EnableSwapChainRendering="False"
         x:Name="view1"
         BackgroundColor="#FFFFF8E1"
         Camera="{Binding Camera}"
@@ -73,40 +74,42 @@
                 CullMode="Back"
                 Geometry="{Binding Plane}"
                 IsThrowingShadow="false"
-                Material="{Binding GrayMaterial}"
+                Material="{Binding PlaneMaterial}"
                 Transform="{Binding PlaneTransform}" />
         <hx:MeshGeometryModel3D
                 x:Name="bar1"
                 CullMode="Back"
                 Geometry="{Binding Bar1}"
-                IsThrowingShadow="false"
-                Material="{Binding BlackMaterial}"
+                IsThrowingShadow="True"
+                Material="{Binding BarMaterial}"
                 Transform="{Binding Bar1Transform}" />
-        <hx:MeshGeometryModel3D
-                x:Name="bar2"
-                CullMode="Back"
-                Geometry="{Binding Bar2}"
-                IsThrowingShadow="false"
-                Material="{Binding BlackMaterial}"
-                Transform="{Binding Bar2Transform}" />
-        <hx:MeshGeometryModel3D
-                x:Name="bar3"
-                CullMode="Back"
-                Geometry="{Binding Bar3}"
-                IsThrowingShadow="false"
-                Material="{Binding BlackMaterial}"
-                Transform="{Binding Bar3Transform}" />
-        <hx:MeshGeometryModel3D
-                x:Name="bar4"
-                CullMode="Back"
-                Geometry="{Binding Bar4}"
-                IsThrowingShadow="false"
-                Material="{Binding BlackMaterial}"
-                Transform="{Binding Bar4Transform}" />
 
         <hx:ShadowMap3D
                 x:Name="shadowMap"
                 LightCamera="{Binding Camera1}"
                 Resolution="{Binding ShadowMapResolution}" IsSceneDynamic="True"/>
     </hx:Viewport3DX>
+
+    <Grid Name="Gr" Margin="5,100,5,0" Height="100">
+        <Label Visibility = "Hidden" Name="l1" Width="100" Background="Transparent" Margin="0,0,195,0" MouseDown="FloatClick"/>
+        <Label Visibility = "Hidden" Name="l2" Width="100" Background="Transparent" Margin="0,0,390,0" MouseDown="FloatClick"/>
+        <Label Visibility = "Hidden" Name="l3" Width="100" Background="Transparent" Margin="0,0,390,0" MouseDown="FloatClick"/>
+        <Label Visibility = "Hidden" Name="l4" Width="100" Background="Transparent" Margin="0,0,390,0" MouseDown="FloatClick"/>
+        <Label Visibility = "Hidden" Name="l5" Width="100" Background="Transparent" Margin="0,0,390,0" MouseDown="FloatClick"/>
+    </Grid>
+    <Grid Name="Gr2" Margin="25,50,25,430" Height="80">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Visibility = "Visible" Name="kl1" Width="80" Background="Transparent" MouseDown="KeepClick"/>
+        <Label Grid.Column="1" Visibility = "Visible" Name="kl2" Width="80" Background="Transparent" MouseDown="KeepClick"/>
+        <Label Grid.Column="2" Visibility = "Visible" Name="kl3" Width="80" Background="Transparent" MouseDown="KeepClick"/>
+        <Label Grid.Column="3" Visibility = "Visible" Name="kl4" Width="80" Background="Transparent" MouseDown="KeepClick"/>
+        <Label Grid.Column="4" Visibility = "Visible" Name="kl5" Width="80" Background="Transparent" MouseDown="KeepClick"/>
+    </Grid>
+    </Grid>
 </UserControl>

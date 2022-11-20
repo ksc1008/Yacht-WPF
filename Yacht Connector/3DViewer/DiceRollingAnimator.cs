@@ -15,12 +15,11 @@ using GeometryModel3D = HelixToolkit.Wpf.SharpDX.GeometryModel3D;
 
 namespace Yacht_Connector._3DViewer
 {
-    public class DiceAnimator
+    public class DiceRollingAnimator
     {
         int frame = 0;
         List<Vector3D> positions = new();
         List<Vector3D> rotAxis = new();
-
 
         AxisAngleRotation3D initRotation;
 
@@ -32,7 +31,10 @@ namespace Yacht_Connector._3DViewer
         private int _intervalMillisecond;
         public int Interval { get => _intervalMillisecond; set => _intervalMillisecond = value; }
 
-        public DiceAnimator(MeshGeometryModel3D _model, int interval)
+        public Vector3D LastPos { get; private set; }
+        public AxisAngleRotation3D LastAngle { get; private set; }
+
+        public DiceRollingAnimator(MeshGeometryModel3D _model, int interval)
         {
             Interval = interval;
             model = _model;
@@ -56,6 +58,8 @@ namespace Yacht_Connector._3DViewer
                 offset += sz;
             }
 
+            LastPos = positions[positions.Count - 1];
+            LastAngle = VectorCalculator.ManipulateFace(VectorCalculator.Face.Up, VectorCalculator.FacePerDieNum[targetDice]);
 
             var aar = new AxisAngleRotation3D();
             aar.Axis = rotAxis[rotAxis.Count - 1];
@@ -78,7 +82,7 @@ namespace Yacht_Connector._3DViewer
 
         public bool Update(long timeStamp, long frequency)
         {
-            int iter = MathUtil.Clamp((int)(((float)(timeStamp - startTime) / frequency) * _intervalMillisecond),0,frame-1);
+            int iter = MathUtil.Clamp((int)((float)(timeStamp - startTime) / frequency * _intervalMillisecond),0,frame-1);
             if (iter == lastiter)
                 return true;
             lastiter = iter;
