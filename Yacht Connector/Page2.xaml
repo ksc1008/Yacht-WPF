@@ -10,267 +10,211 @@
       FontFamily="{materialDesign:MaterialDesignFont}"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1000"
-      Title="Page2">
+      Title="Page2" Loaded="Page_Loaded">
 
     <Grid Background="#fffff8e1">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="38*"/>
-            <RowDefinition Height="161*"/>
-            <RowDefinition Height="161*"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="53*"/>
-            <ColumnDefinition Width="38*"/>
+            <ColumnDefinition Width="91*"/>
             <ColumnDefinition Width="100*"/>
         </Grid.ColumnDefinitions>
+        <Grid x:Name="ScoreboardGrid" Margin="-500,0,500,0">
+            <Grid.RenderTransform>                
+                <TranslateTransform/>
+            </Grid.RenderTransform>
+                    <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="161*"/>
+                <RowDefinition Height="161*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="38*"/>
+            </Grid.ColumnDefinitions>
 
-        <Label Margin="80,0,0,0" Height="40" VerticalAlignment="Bottom" Background="#2B2D2F" Foreground="#DDFFFFFF" Padding="10,0,0,2"
+            <Label Margin="80,0,0,0" Height="40" VerticalAlignment="Bottom" Background="#2B2D2F" Foreground="#DDFFFFFF" Padding="10,0,0,2"
                Content="Categories" FontSize="24" FontFamily="Roboto Light" VerticalContentAlignment="Bottom"/>
 
-        <Grid Grid.Row="0" Grid.Column="1" Height="40" VerticalAlignment="Top" Margin="0,36,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1" Height="40" VerticalAlignment="Top" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <Border Margin="10,10,10,-1" BorderBrush="#d32f2f" BorderThickness="4,4,4,0" CornerRadius="2,2,0,0">
-                <Label Background="#d32f2f" Content="YOU" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#DDFFFFFF"
+                <Border Margin="10,0,10,-1" BorderBrush="#d32f2f" BorderThickness="4,4,4,0" CornerRadius="2,2,0,0">
+                    <Label Background="#d32f2f" Content="YOU" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#DDFFFFFF"
                        Padding="0" Margin="-1"/>
-            </Border>
-        </Grid>
+                </Border>
+            </Grid>
 
 
-        <Grid Grid.Row="1" Margin="80,0,0,10">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+            <Grid Grid.Row="1" Margin="80,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <Label Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,4,4,1" Padding="50,0,0,0" Content="Ones" FontFamily="Roboto Light" FontSize="24"/>
-            <Label Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="Deuces" FontFamily="Roboto Light" FontSize="24"/>
-            <Label Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="Threes" FontFamily="Roboto Light" FontSize="24"/>
-            <Label Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="Fours" FontFamily="Roboto Light" FontSize="24"/>
-            <Label Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="Fives" FontFamily="Roboto Light" FontSize="24"/>
-            <Label Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,3" Padding="50,0,0,0" Content="Sixes" FontFamily="Roboto Light" FontSize="24"/>
-            <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="#2B2D2F" BorderBrush="White" BorderThickness="0,0,0,3" Padding="20,0,0,0"
+                <Label Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,4,4,1" Padding="50,0,0,0" Content="Ones" FontFamily="Roboto Light" FontSize="24"/>
+                <Label Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="Deuces" FontFamily="Roboto Light" FontSize="24"/>
+                <Label Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="Threes" FontFamily="Roboto Light" FontSize="24"/>
+                <Label Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="Fours" FontFamily="Roboto Light" FontSize="24"/>
+                <Label Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="Fives" FontFamily="Roboto Light" FontSize="24"/>
+                <Label Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,3" Padding="50,0,0,0" Content="Sixes" FontFamily="Roboto Light" FontSize="24"/>
+                <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="#2B2D2F" BorderBrush="White" BorderThickness="0,0,0,3" Padding="20,0,0,0"
                    Content="Subtotal" FontFamily="Roboto" FontSize="28" Foreground="#DDFFFFFF" VerticalContentAlignment="Center"/>
-            <Label Grid.Row="8" Background="#2B2D2F" BorderBrush="White" BorderThickness="0,0,0,0" Padding="20,0,0,0"
+                <Label Grid.Row="8" Background="#2B2D2F" BorderBrush="White" BorderThickness="0,0,0,0" Padding="20,0,0,0"
                    Content="+35 Bonus" FontFamily="Roboto Light" FontSize="24" Foreground="#DDFFFFFF" VerticalContentAlignment="Center"/>
-            <!--<Image Grid.Row="0" Width="28" Height="28" HorizontalAlignment="Left" Margin="15,5,0,2" Source="/Resources/d1.png"/>-->
 
-            <Canvas x:Name="c1" Grid.Row="0" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
-            <Canvas x:Name="c2" Grid.Row="1" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
-            <Canvas x:Name="c3" Grid.Row="2" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
-            <Canvas x:Name="c4" Grid.Row="3" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
-            <Canvas x:Name="c5" Grid.Row="4" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
-            <Canvas x:Name="c6" Grid.Row="5" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,2"/>
-        </Grid>
+                <Canvas x:Name="c1" Grid.Row="0" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Canvas x:Name="c2" Grid.Row="1" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Canvas x:Name="c3" Grid.Row="2" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Canvas x:Name="c4" Grid.Row="3" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Canvas x:Name="c5" Grid.Row="4" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Canvas x:Name="c6" Grid.Row="5" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,2"/>
+            </Grid>
 
-        <Grid Grid.Row="2" Margin="80,0,0,10">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Label VerticalContentAlignment = "Center" Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,4,4,1" Padding="50,0,0,0" Content="Choice" FontFamily="Roboto Light" FontSize="24"/>
-            <Label VerticalContentAlignment = "Center" Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="4 of a Kind" FontFamily="Roboto Light" FontSize="24"/>
-            <Label VerticalContentAlignment = "Center" Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="Full House" FontFamily="Roboto Light" FontSize="24"/>
-            <Label VerticalContentAlignment = "Center" Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="S. Straight" FontFamily="Roboto Light" FontSize="24"/>
-            <Label VerticalContentAlignment = "Center" Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="L. Straight" FontFamily="Roboto Light" FontSize="24"/>
-            <Label VerticalContentAlignment = "Center" Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,3" Padding="50,0,0,0" Content="Yacht" FontFamily="Roboto Light" FontSize="24"/>
-            <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="#2B2D2F" BorderBrush="White" BorderThickness="0,0,0,0" Padding="20,0,0,0"
+            <Grid Grid.Row="2" Margin="80,0,0,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label VerticalContentAlignment = "Center" Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,4,4,1" Padding="50,0,0,0" Content="Choice" FontFamily="Roboto Light" FontSize="24"/>
+                <Label VerticalContentAlignment = "Center" Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="4 of a Kind" FontFamily="Roboto Light" FontSize="24"/>
+                <Label VerticalContentAlignment = "Center" Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="Full House" FontFamily="Roboto Light" FontSize="24"/>
+                <Label VerticalContentAlignment = "Center" Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="S. Straight" FontFamily="Roboto Light" FontSize="24"/>
+                <Label VerticalContentAlignment = "Center" Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,1" Padding="50,0,0,0" Content="L. Straight" FontFamily="Roboto Light" FontSize="24"/>
+                <Label VerticalContentAlignment = "Center" Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="4,2,4,3" Padding="50,0,0,0" Content="Yacht" FontFamily="Roboto Light" FontSize="24"/>
+                <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="#2B2D2F" BorderBrush="White" BorderThickness="0,0,0,0" Padding="20,0,0,0"
                    Content="Total" FontFamily="Roboto" FontSize="28" Foreground="#DDFFFFFF" VerticalContentAlignment="Center"/>
 
-            <Canvas x:Name="c11" Grid.Row="0" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
-            <Canvas x:Name="c12" Grid.Row="1" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
-            <Canvas x:Name="c13" Grid.Row="2" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
-            <Canvas x:Name="c14" Grid.Row="3" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
-            <Canvas x:Name="c15" Grid.Row="4" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
-            <Canvas x:Name="c16" Grid.Row="5" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,2"/>
-        </Grid>
-
-        <Grid Grid.Row="1" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Row="1" Grid.Column="1" Margin="0,0,0,10">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,3" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="#ccc5af" BorderBrush="#2B2D2F" BorderThickness="0,4,4,2" Padding="0,0,5,0"
-                   Content="0/63" FontFamily="Roboto" FontSize="24" Foreground="#DD000000" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                <Label Grid.Row="8" Background="#ccc5af" BorderBrush="#2B2D2F" BorderThickness="0,2,4,4" Padding="0,0,5,0" HorizontalContentAlignment="Center"
-                   Content="" FontFamily="Roboto Light" FontSize="24" Foreground="#DD000000" VerticalContentAlignment="Center"/>
-
+                <Canvas x:Name="c11" Grid.Row="0" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Canvas x:Name="c12" Grid.Row="1" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Canvas x:Name="c13" Grid.Row="2" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Canvas x:Name="c14" Grid.Row="3" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Canvas x:Name="c15" Grid.Row="4" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0"/>
+                <Canvas x:Name="c16" Grid.Row="5" Width="28" Height="28" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,2"/>
             </Grid>
-            <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,0,10">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,3" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="#ccc5af" BorderBrush="#2B2D2F" BorderThickness="0,4,4,2" Padding="0,0,5,0"
-                   Content="0/63" FontFamily="Roboto" FontSize="24" Foreground="#DD000000" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                <Label Grid.Row="8" Background="#ccc5af" BorderBrush="#2B2D2F" BorderThickness="0,2,4,4" Padding="0,0,0,0"
-                   Content="" FontFamily="Roboto Light" FontSize="24" Foreground="#DD000000" VerticalContentAlignment="Center"/>
 
-            </Grid>
-        </Grid>
-
-        <Grid Grid.Row="2" Grid.Column="1">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Row="1" Grid.Column="1" Margin="0,0,0,10">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,3" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,4,4" Padding="0,0,0,0" HorizontalContentAlignment="Center"
-                   Content="0" FontFamily="Roboto" FontSize="28" Foreground="#DD000000" VerticalContentAlignment="Center" FontWeight="Bold"/>
-
-            </Grid>
-            <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,0,10">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,3" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center"/>
-                <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,4,4" Padding="0,0,0,0" HorizontalContentAlignment="Center"
-                   Content="0" FontFamily="Roboto" FontSize="28" Foreground="#DD000000" VerticalContentAlignment="Center" FontWeight="Bold"/>
-
-            </Grid>
-        </Grid>
-
-        <Border Grid.Row="1" VerticalAlignment="Top" Grid.Column="2" Margin="80,20,80,57" Height="100" BorderThickness="6" BorderBrush="#1b0000" CornerRadius="0">
-            <Grid Background="#4b2c20">
+            <Grid Grid.Row="1" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Grid Grid.Row="1" Grid.Column="1" Margin="0,0,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Name="P2upper1" Foreground="#84000000" Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P2upper2" Foreground="#84000000" Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P2upper3" Foreground="#84000000" Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P2upper4" Foreground="#84000000" Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P2upper5" Foreground="#84000000" Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P2upper6" Foreground="#84000000" Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,3" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="#ccc5af" BorderBrush="#2B2D2F" BorderThickness="0,4,4,2" Padding="0,0,5,0"
+                   Content="0/63" FontFamily="Roboto" FontSize="24" Foreground="#DD000000" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                    <Label Grid.Row="8" Background="#ccc5af" BorderBrush="#2B2D2F" BorderThickness="0,2,4,4" Padding="0,0,5,0" HorizontalContentAlignment="Center"
+                   Content="" FontFamily="Roboto Light" FontSize="24" Foreground="#DD000000" VerticalContentAlignment="Center"/>
+
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Name="P1upper1" Foreground="#84000000" Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P1upper2" Foreground="#84000000" Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P1upper3" Foreground="#84000000" Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P1upper4" Foreground="#84000000" Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P1upper5" Foreground="#84000000" Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P1upper6" Foreground="#84000000" Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,3" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1UpperMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="#ccc5af" BorderBrush="#2B2D2F" BorderThickness="0,4,4,2" Padding="0,0,5,0"
+                   Content="0/63" FontFamily="Roboto" FontSize="24" Foreground="#DD000000" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                    <Label Grid.Row="8" Background="#ccc5af" BorderBrush="#2B2D2F" BorderThickness="0,2,4,4" Padding="0,0,0,0"
+                   Content="" FontFamily="Roboto Light" FontSize="24" Foreground="#DD000000" VerticalContentAlignment="Center"/>
+
+                </Grid>
             </Grid>
-        </Border>
-        <Border Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" Height="150" Margin="60,140,60,200" BorderThickness="6" BorderBrush="#bdbdbd" CornerRadius="10">
-            <Grid Background="#bdbdbd">
+
+            <Grid Grid.Row="2" Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Border x:Name="dg1" Grid.Column="0" Margin="8" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-                    BorderThickness="3" BorderBrush="#7F00C4FF" CornerRadius="5" Visibility="Hidden">
-                    <Border.Effect>
-                        <BlurEffect KernelType="Box" Radius="5"/>
-                    </Border.Effect>
-                    <Rectangle Fill="#7F00C4FF" Margin="-1"/>
-                </Border>
-                <Border x:Name="dg2" Grid.Column="1" Margin="8" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-                    BorderThickness="3" BorderBrush="#7F00C4FF" CornerRadius="5" Visibility="Hidden">
-                    <Border.Effect>
-                        <BlurEffect KernelType="Box" Radius="5"/>
-                    </Border.Effect>
-                    <Rectangle Fill="#7F00C4FF" Margin="-1"/>
-                </Border>
-                <Border x:Name="dg3" Grid.Column="2" Margin="8" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-                    BorderThickness="3" BorderBrush="#7F00C4FF" CornerRadius="5" Visibility="Hidden">
-                    <Border.Effect>
-                        <BlurEffect KernelType="Box" Radius="5"/>
-                    </Border.Effect>
-                    <Rectangle Fill="#7F00C4FF" Margin="-1"/>
-                </Border>
-                <Border x:Name="dg4" Grid.Column="3" Margin="8" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-                    BorderThickness="3" BorderBrush="#7F00C4FF" CornerRadius="5" Visibility="Hidden">
-                    <Border.Effect>
-                        <BlurEffect KernelType="Box" Radius="5"/>
-                    </Border.Effect>
-                    <Rectangle Fill="#7F00C4FF" Margin="-1"/>
-                </Border>
-                <Border x:Name="dg5" Grid.Column="4" Margin="8" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
-                    BorderThickness="3" BorderBrush="#7F00C4FF" CornerRadius="5" Visibility="Hidden">
-                    <Border.Effect>
-                        <BlurEffect KernelType="Box" Radius="5"/>
-                    </Border.Effect>
-                    <Rectangle Fill="#7F00C4FF" Margin="-1"/>
-                </Border>
-                <Image Name="rd1" Margin="10" Grid.Column="0" Source="/Resources/die6.png"/>
-                <Image Name="rd2" Margin="10" Grid.Column="1" Source="/Resources/die6.png"/>
-                <Image Name="rd3" Margin="10" Grid.Column="2" Source="/Resources/die6.png"/>
-                <Image Name="rd4" Margin="10" Grid.Column="3" Source="/Resources/die6.png"/>
-                <Image Name="rd5" Margin="10" Grid.Column="4" Source="/Resources/die6.png"/>
+                <Grid Grid.Row="1" Grid.Column="1" Margin="0,0,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Name="P2lower1" Foreground="#84000000" Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P2lower2" Foreground="#84000000" Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P2lower3" Foreground="#84000000" Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P2lower4" Foreground="#84000000" Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P2lower5" Foreground="#84000000" Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P2lower6" Foreground="#84000000" Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,4,3" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P2LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,4,4" Padding="0,0,0,0" HorizontalContentAlignment="Center"
+                   Content="0" FontFamily="Roboto" FontSize="28" Foreground="#DD000000" VerticalContentAlignment="Center" FontWeight="Bold"/>
+
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Label Name="P1lower1" Foreground="#84000000" Grid.Row="0" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P1lower2" Foreground="#84000000" Grid.Row="1" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P1lower3" Foreground="#84000000" Grid.Row="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P1lower4" Foreground="#84000000" Grid.Row="3" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P1lower5" Foreground="#84000000" Grid.Row="4" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,1" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Name="P1lower6" Foreground="#84000000" Grid.Row="5" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,2,3,3" Padding="0,0,0,0" Content="" FontFamily="Roboto Light" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MouseEnter="P1LowerMouseEnter" MouseLeave="LabelMouseLeave" MouseDown="ScoreClick"/>
+                    <Label Grid.Row="6" Margin="0,5,0,0" Grid.RowSpan="2" Background="White" BorderBrush="#2B2D2F" BorderThickness="0,4,4,4" Padding="0,0,0,0" HorizontalContentAlignment="Center"
+                   Content="0" FontFamily="Roboto" FontSize="28" Foreground="#DD000000" VerticalContentAlignment="Center" FontWeight="Bold"/>
+
+                </Grid>
             </Grid>
-        </Border>
-        
-        <Button Name="RollButton" Grid.Column="2" Grid.Row="2" Width="240" Height="80" Margin="15,8,15,8" Content="Roll" FontSize="36" Click="RollButton_Click" Background="#FFD32F2F" BorderBrush="#FFD32F2F" FontWeight="Bold"/>
 
+        </Grid>
 
-
+        <local:DiceRoller x:Name="dr" Grid.Column="1" Width="490" Height="605" Margin="17,29,17,10" Grid.Row="1"/>
+        <Button Name="Rollbtn" Visibility="Hidden" Click="Button_Click" Width="200" Height="80" Background="#FFFFD95B" BorderBrush="#FFFFD95B" Content="Roll" FontFamily="Roboto" FontWeight="Bold" FontSize="48" Foreground="#DD000000" Cursor="Hand" Grid.ColumnSpan="2" Margin="476,560,0,80"/>
     </Grid>
+
 </Page>

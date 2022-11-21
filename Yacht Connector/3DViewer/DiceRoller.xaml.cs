@@ -28,16 +28,18 @@ namespace Yacht_Connector
 
     public partial class DiceRoller : UserControl
     {
-        bool initial = true;
-        int cnt = 0;
         int floatNum = 5;
-        int keepNum = 0;
         List<Label> FloatClicks = new();
         List<Label> KeepClicks = new();
         List<float> v = new();
         Random rand = new Random();
         static physicsWrapper c = new physicsWrapper();
-        public MainViewModel mv;
+        private MainViewModel mv;
+
+        public MainViewModel.ReturnDiceDelegate OnDiceRoll { get => mv.DiceRollCallback; set => mv.DiceRollCallback = value; }
+        public MainViewModel.GeneralCallbackDelegate OnFirstRender { get => mv.FirstRenderCallback; set => mv.FirstRenderCallback = value; }
+        public MainViewModel.ButtonDelegate OnButtonActivateChange { get => mv.ButtonStateCallback; set => mv.ButtonStateCallback = value; }
+
         public DiceRoller()
         {
             mv = new(this);
@@ -54,7 +56,6 @@ namespace Yacht_Connector
             KeepClicks.Add(kl3);
             KeepClicks.Add(kl4);
             KeepClicks.Add(kl5);
-
         }
 
         void RearrangeLabels(int num)
@@ -77,43 +78,39 @@ namespace Yacht_Connector
             }
         }
 
-        public int[] GetDiceValues()
+        public void HideDice()
         {
-            return mv.GetDiceValues();
+            mv.HideDice();
         }
 
-
-        public bool Roll()
+        public bool ReadyToRoll()
         {
-            if (initial)
+            return mv.DiceRollReady();
+        }
+
+        public bool Roll(bool isLast)
+        {
+            Debug.Assert(mv.DiceRollReady(),"Not ready to roll dice.");
+            if (mv.CurrentState==MainViewModel.State.Cleared)
             {
-                if (!mv.DiceRollReady())
-                    return false;
                 floatNum = 5;
                 var dresult = new List<int>();
                 for (int i = 0; i < 5; i++)
                     dresult.Add(rand.Next(6)+1);
-                RollDice(5, dresult);
+                RollDice(5, dresult,false);
             }
             else
             {
-                if (!mv.DiceRollReady())
-                    return false;
                 var dresult = new List<int>();
                 for (int i = 0; i < floatNum; i++)
                     dresult.Add(rand.Next(6) + 1);
-                RollDice(floatNum, dresult);
-            }
-            if (++cnt == 3)
-            {
-                initial = true;
-                cnt = 0;
+                RollDice(floatNum, dresult,isLast);
             }
 
             return true;
         }
 
-        private void RollDice(int diceCount, List<int> diceResult)
+        private void RollDice(int diceCount, List<int> diceResult,bool isLast)
         {
             if (diceCount == 0 || diceCount > 5)
                 return;
@@ -128,19 +125,8 @@ namespace Yacht_Connector
             for (int i = 0; i < 7; i++)
                 v.Add(c.getAttr(i));
 
-            if (initial)
-            {
-                mv.SetDiceResult(diceResult,true);
-                mv.Initialize(v);
-                initial = false;
-            }
-            else
-            {
-                mv.SetDiceResult(diceResult,false);
-                mv.AnimateDiceRoll(v);
-            }
-
-
+            mv.SetDiceResult(diceResult);
+            mv.AnimateDiceRoll(v,isLast);
         }
 
         private void FloatClick(object sender, MouseButtonEventArgs e)
@@ -149,7 +135,6 @@ namespace Yacht_Connector
             Debug.WriteLine("Label Index : " + index);
             if (mv.ClickFloating(index))
             {
-                keepNum++;
                 floatNum--;
                 RearrangeLabels(floatNum);
             }
@@ -162,7 +147,6 @@ namespace Yacht_Connector
             Debug.WriteLine("Label Index : " + index);
             if (mv.ClickKeep(index))
             {
-                keepNum--;
                 floatNum++;
                 RearrangeLabels(floatNum);
             }

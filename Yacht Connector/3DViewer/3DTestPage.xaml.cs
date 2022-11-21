@@ -34,7 +34,7 @@ namespace Yacht_Connector
 
         private void b_Click(object sender, RoutedEventArgs e)
         {
-            roller.Roll();
+            roller.Roll(false);
         }
     }
 }

@@ -71,10 +71,7 @@ namespace Yacht_Connector
             storyboardFadeout.Completed += (o, e) =>
             {
                 MainWindow.Instance.fr.Content = new Page2();
-                NavigationService.RemoveBackEntry();
-
             };
-
         }
         void MakeButtonAnim()
         {

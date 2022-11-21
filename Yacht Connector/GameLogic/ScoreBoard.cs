@@ -14,6 +14,7 @@ namespace Yacht
         private int total = 0;
         private bool bonusEnabled = false;
 
+        /** Return if the type of score is already checked  */
         public bool GetChecked(DiceSet.category category) => isChecked[(int)category];
         public int GetScores(DiceSet.category category) => scores[(int)category];
 

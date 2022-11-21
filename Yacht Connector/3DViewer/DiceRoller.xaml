@@ -7,7 +7,7 @@
              xmlns:local="clr-namespace:Yacht_Connector"
              mc:Ignorable="d" 
             
-             d:DesignHeight="400" d:DesignWidth="300">
+             d:DesignHeight="604" d:DesignWidth="490">
     <Grid>
     <hx:Viewport3DX        
         ShowViewCube="False"
@@ -24,10 +24,13 @@
         BackgroundColor="#FFFFF8E1"
         Camera="{Binding Camera}"
         EffectsManager="{Binding EffectsManager}"
-        FXAALevel="Medium" 
+        EnableSSAO="True"
+        MSAA="Eight"        
+        EnableDpiScale="True"
+        Opacity="0"
         ModelUpDirection="{Binding UpDirection}"
-        TextBrush="Black"
-        UseDefaultGestures="False" ZoomRectangleCursor="SizeNWSE">
+        BorderBrush="#FFFFF8E1"
+        UseDefaultGestures="False" >
 
         <hx:SpotLight3D
                 x:Name="spotLight"

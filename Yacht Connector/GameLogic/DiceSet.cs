@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,14 @@ namespace Yacht
             }
 
             MakeDices(diceRollMask);
+            CalculateDices();
+        }
+
+        public void SetDice(int[] dice)
+        {
+            Debug.Assert(dice.Length == 5, "number of dice is not equal to 5.");
+            for (int i = 0; i < dice.Length; i++)
+                dices[i] = dice[i]-1;
             CalculateDices();
         }
 

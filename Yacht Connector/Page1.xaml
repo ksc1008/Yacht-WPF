@@ -29,8 +29,9 @@
                 <Rectangle Fill="#ffce93d8"/>
                 <Image HorizontalAlignment="Left" Height="48" Margin="13,0,0,0" VerticalAlignment="Center" Width="48" Source="/Resources/Person.png" Stretch="Fill" Opacity="0.87"/>
                 <Label Content="Singleplayer" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="398" FontSize="34" Padding="10,4,10,4" Margin="65,0,0,0" VerticalContentAlignment="Center"/>
-                <Label Grid.Row ="1" Content="인공지능을 대상으로 혼자 플레이합니다." FontSize="16" Padding="15,15,15,4" Foreground="#DD000000"/>
-                <Button Content="Play" HorizontalAlignment="Center" Height="35" Margin="0,5,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Background="#FFFFC107" BorderBrush="#FFFFC107" Foreground="#DD000000" Click="Button_Click"/>
+                <Label Grid.Row ="1" Content="하나의 PC에서 두 플레이어가 번갈아가며 플레이하거나,  &#xA;&#xA;인공지능을 대상으로 혼자 플레이합니다." FontSize="16" Padding="15,15,15,4" Foreground="#DD000000"/>
+                <Button Content="Local 2P" HorizontalAlignment="Left" Height="36" Margin="104,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="100" BorderBrush="#FFFFC107" Background="#FFFFC107" Foreground="#DD000000" Click="Button_Click"/>
+                <Button Content="Play Alone" HorizontalAlignment="Right" Height="35" Margin="0,0,104,0" Grid.Row="2" VerticalAlignment="Center" Width="100" BorderBrush="#FFFFC107" Background="#FFFFC107" Foreground="#DD000000"/>
 
             </Grid>
         </materialDesign:Card>

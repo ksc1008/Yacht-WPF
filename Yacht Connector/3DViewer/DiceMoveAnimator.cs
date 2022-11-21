@@ -21,7 +21,7 @@ namespace Yacht_Connector._3DViewer
         public Vector3D currentPos { get; private set; }
 
         public bool OnRunning { get; private set; }
-        AxisAngleRotation3D initialFacingFace;
+        AxisAngleRotation3D initialFacingFace = new AxisAngleRotation3D(new Vector3D(0,1,0),0);
         float initialYRotation = 0;
         float targetYRotation = 0;
 
@@ -44,7 +44,7 @@ namespace Yacht_Connector._3DViewer
             this.intervalMilliseconds = intervalMilliseconds;
         }
 
-        public void SetAnimation(Vector3D fromPos, Vector3D toPos, AxisAngleRotation3D initialFace = null, int durationMilliseconds = 300)
+        public void SetAnimation(Vector3D fromPos, Vector3D toPos, AxisAngleRotation3D? initialFace = null, int durationMilliseconds = 150)
         {
             if(initialFace != null)
                 initialFacingFace = initialFace.Clone();
